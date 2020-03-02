@@ -3,53 +3,22 @@
 	<body>
 {% extends "layout.html" %}
 {% block content %}
-<style> 
-        table, th, td { 
-            border: 1px solid black; 
-            border-collapse: collapse; 
-        } 
-          
-        th, td { 
-            padding: 5px; 
-            text-align: left; 
-        } 
-          
-    </style> 
 
-
-
-
-
-<table style="width:100%"> 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Author</th>
-        <th>Publisher</th>
-        <th>Year</th>
-        <th>Description</th>
-        
-        
-    </tr>
-    </thead>
-    <tbody>
-        {% for row in value %} 
-            <tr>
-                <td>{{row[5]}}</td>
-                <td>{{row[0]}}</td> 
-                <td>{{row[1]}}</td>
-                <td>{{row[2]}}</td>
-                <td>{{row[3]}}</td>
-                <td>{{row[4]}}</td>
-<form  action="{{url_for('displaybooks', id=row[5])}}">            
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
- 
-</form>
-
-</body>
-</html>
+{% for item in data %} 
+<form  action="{{url_for('displaybooks', id=item[0])}}">  
+		<div class="displaybooks">
+            <h1>{{item[1]}}</h1>
+                            
+    			<p>Author: {{item[2]}}</p>
+				<p>Publisher: {{item[3]}}</p>
+				<p>Year Published: {{item[4]}}</p>
+				<p>Genre: {{item[5]}}</p>
+				<p>Description: {{item[6]}}</p>
+				<p>Quantity: {{item[7]}}</p>
+				
+			</form>     
+         {% endfor %} 
+	     </div>
 {% endblock %}
+	</body>
+</html>

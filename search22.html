@@ -10,7 +10,7 @@
     <body>
         <h1><center>Library</center></h1>
         <form  method="post" action="{{ url_for('search') }}" style="margin:auto;max-width:600px">
-            <input type="text" placeholder="Search by book or author" name="book">
+            <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i>
             </button>
         </form>
@@ -20,17 +20,28 @@
         
         <table>
         <tbody>
-        {% for item in data %} 
-            <tr>
-            
-                
-                
-                <td><a href="{{ url_for('displaybooks',id=item[2])}}" > {{item[0]}} by {{item[1]}}</a></td> 
-                
-               
+        {% for item in data1 %} 
+            <tr>                
+                <td><a href="{{ url_for('displaybooks',id=item[0])}}" > Book: {{item[1]}} by {{item[2]}}</a></td>  
+                              
             </tr>    
      </tbody>   
- {% endfor %}    
+ {% endfor %}  
+ 
+ {% for item in data2 %} 
+            <tr>                
+                <td><a href="{{ url_for('displaymovies',id=item[0])}}" > Movie: {{item[1]}} by {{item[2]}}</a></td>                
+            </tr>    
+     </tbody>   
+ {% endfor %}  
+ 
+ {% for item in data3 %} 
+            <tr>                
+                <td><a href="{{ url_for('displaymusic',id=item[0])}}" > Music: {{item[1]}} by {{item[2]}}</a></td>                
+            </tr>    
+     </tbody>   
+ {% endfor %}  
+   
  </table>
 
         

@@ -26,7 +26,9 @@
         <th>Musician/Band</th>
         <th>Album</th>
         <th>Year</th>
+        <th>Genre</th>
         <th>Description</th>
+        <th>Quantity</th>
         
         
     </tr>
@@ -40,6 +42,9 @@
                 <td>{{row[3]}}</td>
                 <td>{{row[4]}}</td>
                 <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                
            
 <form  action="{{url_for('deletemusic', id=row[0])}}" method="post"> 
 <input type="submit" value="DELETE">

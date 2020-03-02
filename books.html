@@ -25,7 +25,9 @@
         <th>Author</th>
         <th>Publisher</th>
         <th>Year</th>
+        <th>Genre</th>
         <th>Description</th>
+        <th>Quantity</th>
         <th>           </th>
         <th>           </th>
         
@@ -34,14 +36,16 @@
     <tbody>
         {% for row in value %} 
             <tr>
-                <td>{{row[5]}}</td>
-                <td>{{row[0]}}</td> 
-                <td>{{row[1]}}</td>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td> 
                 <td>{{row[2]}}</td>
                 <td>{{row[3]}}</td>
                 <td>{{row[4]}}</td>
-                <td> Edit </td> 
-                <td><a href="{{ url_for('delete', id=row[5]) }}"  > Delete </a></td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td> 
+                <td><a href="{{ url_for('editbook', id=row[0]) }}"  > Edit </a></td> 
+                <td><a href="{{ url_for('deletebooks', id=row[0]) }}"  > Delete </a></td>
                 
             </tr>
         {% endfor %}

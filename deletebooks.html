@@ -14,22 +14,22 @@
             text-align: left; 
         } 
           
-
     </style> 
+
+
 
 <table style="width:100%"> 
     <thead>
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Musician/Band</th>
-        <th>Album</th>
+        <th>Author</th>
+        <th>Publisher</th>
         <th>Year</th>
         <th>Genre</th>
         <th>Description</th>
         <th>Quantity</th>
-        <th>           </th>
-        <th>           </th>
+        
         
     </tr>
     </thead>
@@ -44,15 +44,17 @@
                 <td>{{row[5]}}</td>
                 <td>{{row[6]}}</td>
                 <td>{{row[7]}}</td>
-                <td> <a href="{{ url_for('editmusic', id=row[0]) }}"  > Edit </a></td>                 
-                <td><a href="{{ url_for('deletemusic', id=row[0]) }}"  > Delete </a></td>
-                
+               
+<form  action="{{url_for('deletebooks', id=row[0])}}" method="post"> 
+<input type="submit" value="DELETE">
+</form>
             </tr>
         {% endfor %}
     </tbody>
-
 </table>
-<a href="{{ url_for('addmusic') }}">ADD MUSIC</a>
+ 
+
+
 </body>
 </html>
 {% endblock %}

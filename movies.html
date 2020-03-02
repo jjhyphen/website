@@ -24,7 +24,9 @@
         <th>Name</th>
         <th>Director</th>
         <th>Year</th>
+        <th>Genre</th>
         <th>Description</th>
+        <th>Quantity</th>
         <th>           </th>
         <th>           </th>
         
@@ -37,8 +39,10 @@
                 <td>{{row[1]}}</td> 
                 <td>{{row[2]}}</td>
                 <td>{{row[3]}}</td>
-                
-                <td> Edit </td> 
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td> 
+                <td>{{row[6]}}</td>               
+                <td> <a href="{{ url_for('editmovie', id=row[0]) }}"  > Edit </a></td> 
                 <td><a href="{{ url_for('deletemovies', id=row[0]) }}"  > Delete </a></td>
                 
             </tr>
